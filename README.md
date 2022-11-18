@@ -6,6 +6,10 @@ Desafio técnico baseado no problema do robo em marte.
 
 ![](./img/print1.png)
 
+### Tecnologias usadas 
+- NextJS - front 
+- NestJS - backend
+
 ### Como rodar
 
 - Acessar [backend](/sonda-back/) e rodar a aplicação via `yarn dev`
