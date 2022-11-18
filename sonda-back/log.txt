@@ -22,3 +22,75 @@
       COMMAND: LRMLRMLMRLMRLMRLMRLMLRRL
       AFTER: (5,-2) E
     
+
+      ROVER: iW_HfLftzhsiy1GMAAAF
+      BEFORE: (0,0) S
+      COMMAND: L
+      AFTER: (0,0) E
+    
+
+      ROVER: iW_HfLftzhsiy1GMAAAF
+      BEFORE: (0,0) E
+      COMMAND: M
+      AFTER: (1,0) E
+    
+
+      ROVER: iW_HfLftzhsiy1GMAAAF
+      BEFORE: (1,0) E
+      COMMAND: M
+      AFTER: (2,0) E
+    
+
+      ROVER: iW_HfLftzhsiy1GMAAAF
+      BEFORE: (2,0) E
+      COMMAND: M
+      AFTER: (3,0) E
+    
+
+      ROVER: iW_HfLftzhsiy1GMAAAF
+      BEFORE: (3,0) E
+      COMMAND: M
+      AFTER: (4,0) E
+    
+
+      ROVER: iW_HfLftzhsiy1GMAAAF
+      BEFORE: (4,0) E
+      COMMAND: M
+      AFTER: (5,0) E
+    
+
+      ROVER: iW_HfLftzhsiy1GMAAAF
+      BEFORE: (5,0) E
+      COMMAND: M
+      AFTER: (6,0) E
+    
+
+      ROVER: iW_HfLftzhsiy1GMAAAF
+      BEFORE: (6,0) E
+      COMMAND: L
+      AFTER: (6,0) N
+    
+
+      ROVER: iW_HfLftzhsiy1GMAAAF
+      BEFORE: (6,0) N
+      COMMAND: M
+      AFTER: (6,1) N
+    
+
+      ROVER: iW_HfLftzhsiy1GMAAAF
+      BEFORE: (6,1) N
+      COMMAND: M
+      AFTER: (6,2) N
+    
+
+      ROVER: iW_HfLftzhsiy1GMAAAF
+      BEFORE: (6,2) N
+      COMMAND: M
+      AFTER: (6,3) N
+    
+
+      ROVER: iW_HfLftzhsiy1GMAAAF
+      BEFORE: (6,3) N
+      COMMAND: MMMM
+      AFTER: (6,7) N
+    
