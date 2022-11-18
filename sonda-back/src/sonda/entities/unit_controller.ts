@@ -1,6 +1,6 @@
 import { SondaGateway } from "../sonda.gateway";
 import { MapSonda } from "./map_sonda";
-import { Sonda } from "./sonda.entity";
+import { Sonda } from "./sonda";
 
 export class UnitController {
 
@@ -9,9 +9,9 @@ export class UnitController {
 
     private map_sonda: MapSonda = {};
     private order = [];
-    
+
     public static get_instance() {
-        if(!this.instance) {
+        if (!this.instance) {
             this.instance = new UnitController();
         }
         return this.instance;
@@ -19,31 +19,27 @@ export class UnitController {
 
     public interpret_command(id: string, data: string) {
         const sonda = this.get_sonda(id);
-        if(sonda) {
+        if (sonda) {
             sonda.interpret_command(data);
         }
     }
-    
+
     public get_sondas() {
         return Object.keys(this.map_sonda).map((sonda_id) => {
             return this.map_sonda[sonda_id].seriable();
         });
     }
-    after_update(){
-        // Pegando a order de inserção e emmitindo evento de atualização
-        for(let i = 0; i < this.order.length; i++) {
-            this.event_emmit('update',this.map_sonda[this.order[i]]);
-        }
-        console.log(this);
+    after_update() {
+        this.event_emmit('update', this.get_sondas());
     }
 
-    before_update(){
-        console.log(this);
+    before_update() {
+        return
     }
-    
+
     update_sonda(sonda_id: string, sonda: Sonda) {
         this.before_update();
-        if(!this.map_sonda[sonda_id]) {
+        if (!this.map_sonda[sonda_id]) {
             this.map_sonda[sonda_id] = sonda;
             this.order.push(sonda_id);
         } else {
@@ -57,6 +53,14 @@ export class UnitController {
         return this.map_sonda[sonda_id];
     }
 
+    get_sonda_tuple(sonda_id){
+        return [
+                  this.get_sonda(sonda_id).position.x , 
+                this.get_sonda(sonda_id).position.y, 
+                this.get_sonda(sonda_id).direction
+            ];
+    }
+
     remove_sonda(sonda_id: string) {
         this.before_update();
         delete this.map_sonda[sonda_id];
@@ -68,8 +72,8 @@ export class UnitController {
 
     get_sonda_order(sonda_id) {
         let count = 0;
-        for(let i = 0; i < this.order.length; i++) {
-            if(this.order[i] == sonda_id) {
+        for (let i = 0; i < this.order.length; i++) {
+            if (this.order[i] == sonda_id) {
                 return count;
             }
             count++;
@@ -78,6 +82,6 @@ export class UnitController {
     }
 
     event_emmit(event: string, data: any) {
-        SondaGateway.server.emit(event,this.get_sondas());
+        if (SondaGateway.server) SondaGateway.server.emit(event, data);
     }
 }

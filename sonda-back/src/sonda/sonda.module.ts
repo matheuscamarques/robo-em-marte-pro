@@ -1,8 +1,7 @@
 import { Module } from '@nestjs/common';
-import { SondaService } from './sonda.service';
 import { SondaGateway } from './sonda.gateway';
 
 @Module({
-  providers: [SondaGateway, SondaService]
+  providers: [SondaGateway],
 })
 export class SondaModule {}

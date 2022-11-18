@@ -7,6 +7,7 @@ const sleep = (milliseconds:number) => {
 
 export class Sonda {
 
+
     public id: string;
     public position: {
         x: number,
@@ -33,11 +34,15 @@ export class Sonda {
         }
     }
 
-    public constructor(id :string, unit_controller: UnitController){
+    private constructor(id :string, unit_controller: UnitController){
         this.unit_controller = unit_controller;
         this.id = id;
         this.unit_controller.update_sonda(this.id, this);
     }
+
+    static factory(id: string, base: UnitController) {
+        return new Sonda(id, base);
+      }
 
     public async interpret_command(data: string) {
         const commands = data.split('');
@@ -64,11 +69,11 @@ export class Sonda {
     }
 
     public move_north() {
-        this.position.y -= 1;
+        this.position.y += 1;
     }
 
     public move_south() {
-        this.position.y += 1;
+        this.position.y -= 1;
     }
 
     public move_east() {

@@ -1,0 +1,24 @@
+
+      ROVER: To9D4FwCrCo31JWKAAAB
+      BEFORE: (0,0) S
+      COMMAND: LMLMLMLMLML
+      AFTER: (1,0) N
+    
+
+      ROVER: To9D4FwCrCo31JWKAAAB
+      BEFORE: (1,0) N
+      COMMAND: LMLMLMLMLMLM
+      AFTER: (0,-1) S
+    
+
+      ROVER: To9D4FwCrCo31JWKAAAB
+      BEFORE: (0,-1) S
+      COMMAND: LMLMLMLMLMLMLML
+      AFTER: (0,0) S
+    
+
+      ROVER: IpPhFJxMl79yqtPjAAAB
+      BEFORE: (0,0) S
+      COMMAND: LRMLRMLMRLMRLMRLMRLMLRRL
+      AFTER: (5,-2) E
+    
