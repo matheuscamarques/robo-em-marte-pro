@@ -16,4 +16,8 @@ Desafio técnico baseado no problema do robo em marte.
 - Adicionado web-socket para simular muitos rovers, basta abrir novas janelas.
 - A um arquivo de log.txt na raiz do backend.
 
+
+### Features
+- Docker compose.
+
 @by matheuscamarques
