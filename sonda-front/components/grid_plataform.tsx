@@ -21,14 +21,19 @@ export const GridPlataform: React.FC<GridPlataformProps> = ({sondas}) => {
             let rotation = 0;
 
             switch (sonda?.direction) {
+                // ! Por conta de norte e sul estarem invertidos, é necessário inverter a rotação
+                // ! para que a imagem fique correta
+                // ! no backend quando andamos para o norte a posição y aumenta
+                // ! no frontend quando andamos para o norte a posição y diminui 
+                // ! por isso é necessário inverter a rotação
                 case 'N':
-                    rotation = 0;
+                    rotation = 180;
                     break;
                 case 'E':
                     rotation = 90;
                     break;
                 case 'S':
-                    rotation = 180;
+                    rotation = 0;
                     break;
                 case 'W':
                     rotation = 270;

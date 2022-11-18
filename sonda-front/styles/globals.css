@@ -46,3 +46,13 @@ a {
 .d-flex{
   display: flex;
 }
+
+
+.wind-rose{
+  transform: rotate(180deg);
+  position: absolute;
+  bottom: 0;
+  width: 550px;
+  height: 550px;
+  right: 0;
+}

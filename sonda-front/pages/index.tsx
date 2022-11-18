@@ -3,6 +3,7 @@ import Image from 'next/image'
 import { useEffect, useState } from 'react';
 import { io } from 'socket.io-client';
 import { ControllerSonda } from '../components/controller_sonda';
+import { WindRose } from '../components/float_wind_rose';
 import { GridPlataform } from '../components/grid_plataform';
 import { Sonda } from '../entity/sonda';
 import styles from '../styles/Home.module.css'
@@ -51,6 +52,7 @@ export default function Home() {
         <div className="d-flex">
           <ControllerSonda socket={socket} />
           <GridPlataform sondas={sondas} />
+          <WindRose />
         </div>
       </main>
     </div>
